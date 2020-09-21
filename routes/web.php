@@ -24,9 +24,13 @@ Route::get('/create', 'StudentController@create')->name('create');
 Route::get('/edit/{id}', 'StudentController@edit')->name('edit');
 Route::get('/show/{id}', 'StudentController@show')->name('show');
 
+Route::get('/create-subject', 'SubjectController@create')->name('create-subject');
+
 
 Route::post('/store', 'StudentController@store')->name('store');
 //Route::post('/store', 'StudentController@store');
 Route::post('/update/{id}', 'StudentController@update')->name('update');
 Route::post('/delete/{id}', 'StudentController@delete')->name('delete');
+
+Route::post('/view-subject', 'SubjectController@store')->name('view-subject');
 

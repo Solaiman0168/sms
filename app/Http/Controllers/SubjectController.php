@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\cr;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -24,7 +25,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view ('subject.create_subject');
     }
 
     /**
@@ -35,7 +36,15 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//        dd($request->all());
+
+        // Insert subject name into subject datatable
+        $subject = new Subject;
+        $subject->subject_name = $request['subject_name'];
+        $subject->save();
+
+        return back()->with('subject_add_success_msg', 'Subject added successfully');
+
     }
 
     /**
