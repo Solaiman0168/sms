@@ -24,7 +24,7 @@ Route::get('/create', 'StudentController@create')->name('create');
 Route::get('/edit/{id}', 'StudentController@edit')->name('edit');
 Route::get('/show/{id}', 'StudentController@show')->name('show');
 
-Route::get('/index', 'SubjectController@index')->name('index');
+Route::get('/subject-index', 'SubjectController@index')->name('subject-index');
 Route::get('/create-subject', 'SubjectController@create')->name('create-subject');
 
 

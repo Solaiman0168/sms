@@ -186,7 +186,7 @@
                         <a href="javascript:void(0);" class="waves-effect"><i class="ti-paint-bucket"></i> <span> Subject </span> <span class="menu-arrow"></span> </a>
                         <ul class="list-unstyled">
                             <li><a href="{{route('create-subject')}}">Add Subject</a></li>
-{{--                            <li><a href="{{route('view-subject')}}">Subject List</a></li>--}}
+                            <li><a href="{{route('subject-index')}}">Subject List</a></li>
                         </ul>
                     </li>
 

@@ -15,7 +15,8 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        $subjects = Subject::orderBy('subject_name', 'desc')->get();
+        return view('subject.index')->with('subjects', $subjects);
     }
 
     /**
