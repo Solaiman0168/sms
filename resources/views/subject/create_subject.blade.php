@@ -7,7 +7,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Add Student
+            Add Subject
         </div>
 
         @if ($errors->any())
@@ -37,8 +37,8 @@
 
                 {{ csrf_field() }}
 
-                <div class="form-group mt-5">
-                    <label for="subject_name">Name:</label>
+                <div class="form-group">
+                    <label for="subject_name">Subject Name:</label>
                     <input type="text" class="form-control" name="subject_name" id="subject_name" required>
                 </div>
 
