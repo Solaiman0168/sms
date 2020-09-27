@@ -15,7 +15,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::orderBy('subject_name', 'desc')->get();
+        $subjects = Subject::orderBy('subject_name', 'asc')->get();
         return view('subject.index')->with('subjects', $subjects);
     }
 
@@ -88,8 +88,11 @@ class SubjectController extends Controller
      * @param  \App\cr  $cr
      * @return \Illuminate\Http\Response
      */
-    public function destroy(cr $cr)
+    public function delete($id)
     {
-        //
+        $subject = Subject::find($id);
+        $subject->delete();
+
+        return back()->with('subject_delete_success_msg','Subject deleted successfully');
     }
 }

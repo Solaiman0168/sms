@@ -34,4 +34,4 @@ Route::post('/update/{id}', 'StudentController@update')->name('update');
 Route::post('/delete/{id}', 'StudentController@delete')->name('delete');
 
 Route::post('/view-subject', 'SubjectController@store')->name('view-subject');
-
+Route::post('/delete/{id}', 'SubjectController@delete')->name('delete');

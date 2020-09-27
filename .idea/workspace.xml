@@ -173,11 +173,18 @@
       <workItem from="1600707675176" duration="8085000" />
       <workItem from="1600745241637" duration="607000" />
       <workItem from="1601026032767" duration="4710000" />
-      <workItem from="1601085767678" duration="4565000" />
+      <workItem from="1601085767678" duration="4738000" />
+      <workItem from="1601173948846" duration="2469000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601174542325">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601174542325" />
   </component>
 </project>
