@@ -17,10 +17,13 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id');
             $table->Integer('registration_id');
             $table->string('name');
+            $table->string('subject_name');
             $table->string('department_name');
             $table->longText('image')->nullable();
             $table->text('info')->nullable();
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Student;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -25,7 +26,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create_student');
+        $subjects = Subject::all();
+        return view('student.create_student', Compact('subjects'));
     }
 
     /**
@@ -41,6 +43,7 @@ class StudentController extends Controller
             'registration_id' => 'required|integer|',
             'name'            => 'required|string|max:25',
             'department_name' => 'required|string',
+            'subject_name'    => 'required|string',
             'info' => 'nullable'
         ]);
 
@@ -53,6 +56,7 @@ class StudentController extends Controller
        $student->registration_id = $request['registration_id'];
        $student->name = $request['name'];
        $student->department_name = $request['department_name'];
+       $student->subject_name = $request['subject_name'];
        $student->info = $request['info'];
         if ($request->student_image) {
             $file = $request->file('student_image');

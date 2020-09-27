@@ -25,7 +25,7 @@
         @endif
 
         @if (Session::has('student_add_success_msg'))
-            <div  class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div  class="alert alert-success alert-dismissible fade show" role="alert">
                 {!! Session::get('student_add_success_msg') !!}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -48,6 +48,16 @@
                 <div class="form-group">
                     <label for="registration_id">Registration No:</label>
                     <input type="number" class="form-control" name="registration_id" id="registration_id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject_name">Select Subject</label>
+                    <select class="form-control" name="subject_name" id="subject_name">
+                        <option value="1" disabled>Select Subject</option>
+                        @foreach($subjects as $subject)
+                        <option value="$subject->id">{{$subject->subject_name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
