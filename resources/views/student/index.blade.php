@@ -34,20 +34,14 @@
                              <th>Action</th>
                          </tr>
                     </thead>
-                @isset($students)
-                    @foreach($students as $student)
+
                     <tbody>
+                    @isset($students)
+                        @foreach($students as $student)
                         <tr>
                             <td>{{$student->name}}</td>
                             <td>{{$student->registration_id}}</td>
-                            <td>
-                                @isset($student->subjects)
-                                    @foreach($student->subjects as $subject)
-                                        {{$subject->subject_name}}
-                                    @endforeach
-                                @endisset
-{{--                                {{$student->subjects->subject_name}}--}}
-                            </td>
+                            <td>{{$student->subject_name}}</td>
                             <td>{{$student->department_name}}</td>
                             <td><img src="{{asset($student->image)}}" height="100" width="150"  alt="Responsive image"></td>
                             <td>{{$student->info}}</td>
@@ -62,9 +56,9 @@
                                 </div>
                             </td>
                         </tr>
+                        @endforeach
+                    @endisset
                     </tbody>
-                    @endforeach
-                @endisset
                 </table>
             </div>
 

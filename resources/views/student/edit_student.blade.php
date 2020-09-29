@@ -1,6 +1,10 @@
 
 @extends('master')
 
+@section('title')
+    Edit Student | Student Management System
+@endsection
+
 @section('content')
 
 
@@ -9,24 +13,24 @@
             Edit Student
         </div>
 
-
-        @if (Session::has('student_update_success_msg'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {!! Session::get('student_update_success_msg') !!}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
-
-
         <div class="card-body">
+
+
+            @if (Session::has('student_update_success_msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {!! Session::get('student_update_success_msg') !!}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+
+
             <form action="{{route('update', $student->id)}}" method="post" enctype="multipart/form-data">
 
                 {{ csrf_field() }}
 
-                <div class="form-group mt-5">
+                <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" name="name" id="name" value="{{$student->name}}" required>
                 </div>
@@ -37,8 +41,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="department_name">Department Name:</label>
-                    <input type="text" class="form-control" name="department_name" id="department_name" value="{{$student->department_name}}" required>
+                    <label for="subject_name">Select Subject</label>
+                    <select class="form-control select2" name="subject_name" id="subject_name">
+                        <option value="1" disabled>Select Subject</option>
+                        @foreach($subjects as $subject)
+                            <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="department_name">Select Department:</label>
+                    <select class="form-control select2" name="department_name" id="department_name">
+                        <option value="1" disabled>Select Department</option>
+                        @foreach($departments as $department)
+                            <option value="{{$department->department_name}}">{{$department->department_name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">

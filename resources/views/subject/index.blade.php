@@ -22,6 +22,19 @@
                 </div>
             @endif
 
+                @if ($errors->any())
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
 
             <table class="w-100">
                 <thead>
@@ -32,10 +45,12 @@
                 </tr>
                 </thead>
 
+                <tbody>
+
                 <?php $number = 1; ?>
 
                 @foreach($subjects as $subject)
-                <tbody>
+
                 <tr>
                     <td>{{ $number }}</td>
                     <td>{{$subject->subject_name}}</td>
@@ -46,10 +61,13 @@
                         </form>
                     </td>
                 </tr>
-                </tbody>
+
                 <?php $number++; ?>
 
                 @endforeach
+
+                </tbody>
+
             </table>
         </div>
     </div>

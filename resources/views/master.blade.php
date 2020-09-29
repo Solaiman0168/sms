@@ -189,6 +189,13 @@
                             <li><a href="{{route('subject-index')}}">Subject List</a></li>
                         </ul>
                     </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-paint-bucket"></i> <span> Department </span> <span class="menu-arrow"></span> </a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('create-department')}}">Add Department</a></li>
+                            <li><a href="{{route('department-index')}}">Department List</a></li>
+                        </ul>
+                    </li>
 
 {{--                    <li class="has_sub">--}}
 {{--                        <a href="javascript:void(0);" class="waves-effect"><i class="ti-light-bulb"></i><span class="label label-primary pull-right">10</span><span> Components </span> </a>--}}
@@ -553,17 +560,17 @@
 <script src="{{asset('assets/js/jquery.core.js')}}"></script>
 <script src="{{asset('assets/js/jquery.app.js')}}"></script>
 
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $('.counter').counterUp({
-            delay: 100,
-            time: 1200
-        });
+{{--<script type="text/javascript">--}}
+{{--    jQuery(document).ready(function($) {--}}
+{{--        $('.counter').counterUp({--}}
+{{--            delay: 100,--}}
+{{--            time: 1200--}}
+{{--        });--}}
 
-        $(".knob").knob();
+{{--        $(".knob").knob();--}}
 
-    });
-</script>
+{{--    });--}}
+{{--</script>--}}
 
 </body>
 </html>

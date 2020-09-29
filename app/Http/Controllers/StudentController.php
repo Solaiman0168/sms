@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use App\Subject;
+use App\Department;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -26,8 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
+        $departments = Department::all();
         $subjects = Subject::all();
-        return view('student.create_student', Compact('subjects'));
+        return view('student.create_student', Compact('subjects', 'departments'));
     }
 
     /**
@@ -88,8 +90,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
+        $departments = Department::all();
+        $subjects = Subject::all();
         $student = Student::find($id);
-        return view ('student.edit_student')->with('student', $student);
+        return view ('student.edit_student', Compact('subjects', 'departments'))->with('student', $student);
     }
 
     /**

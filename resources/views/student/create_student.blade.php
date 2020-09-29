@@ -5,6 +5,15 @@
 @endsection
 
 @section('content')
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+{{--    <script>--}}
+{{--        $('.select2').select2();--}}
+{{--    </script>--}}
+
+
     <div class="card">
         <div class="card-header">
             Add Student
@@ -52,17 +61,22 @@
 
                 <div class="form-group">
                     <label for="subject_name">Select Subject</label>
-                    <select class="form-control" name="subject_name" id="subject_name">
+                    <select class="form-control select2" name="subject_name" id="subject_name">
                         <option value="1" disabled>Select Subject</option>
                         @foreach($subjects as $subject)
-                        <option value="$subject->id">{{$subject->subject_name}}</option>
+                        <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="department_name">Department:</label>
-                    <input type="text" class="form-control" name="department_name" id="department_name" required>
+                    <label for="department_name">Select Department:</label>
+                    <select class="form-control select2" name="department_name" id="department_name">
+                        <option value="1" disabled>Select Department</option>
+                        @foreach($departments as $department)
+                            <option value="{{$department->department_name}}">{{$department->department_name}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -85,6 +99,13 @@
         </div>
     </div>
 
+
+{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--}}
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>--}}
+
+    <script>
+        $('.select2').select2();
+    </script>
 
 
 @endsection

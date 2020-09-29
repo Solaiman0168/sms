@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Department;
+use App\Student;
 use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
@@ -14,7 +15,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Department::orderBy('department_name', 'asc')->get();
+        return view('department.index')->with('departments', $departments);
     }
 
     /**
@@ -24,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view ('department.create_department');
     }
 
     /**
@@ -35,7 +37,14 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+//                dd($request->all());
+
+        // Insert department name into department datatable
+        $department = new Department;
+        $department->department_name = $request['department_name'];
+        $department->save();
+
+        return back()->with('department_add_success_msg', 'Department added successfully');
     }
 
     /**
@@ -78,8 +87,11 @@ class DepartmentController extends Controller
      * @param  \App\Department  $department
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Department $department)
+    public function delete($id)
     {
-        //
+        $department = Student::find($id);
+        $department->delete();
+
+        return back()->with('department_delete_success_msg','Department deleted successfully');
     }
 }

@@ -27,8 +27,16 @@
                                         <td> {{ $student->registration_id }} </td>
                                     </tr>
                                     <tr>
+                                        <td>Subject Name</td>
+                                        <td>
+                                            {{$student->subject_name}}
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>Department Name</td>
-                                        <td> {{ $student->department_name }} </td>
+                                        <td>
+                                            {{$student->department_name}}
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Info</td>
