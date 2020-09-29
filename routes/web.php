@@ -27,6 +27,9 @@ Route::get('/show/{id}', 'StudentController@show')->name('show');
 Route::get('/subject-index', 'SubjectController@index')->name('subject-index');
 Route::get('/create-subject', 'SubjectController@create')->name('create-subject');
 
+Route::get('/department-index', 'DepartmentController@index')->name('department-index');
+Route::get('/create-department', 'DepartmentController@create')->name('create-department');
+
 
 Route::post('/store', 'StudentController@store')->name('store');
 //Route::post('/store', 'StudentController@store');
@@ -35,3 +38,6 @@ Route::post('/delete/{id}', 'StudentController@delete')->name('delete');
 
 Route::post('/view-subject', 'SubjectController@store')->name('view-subject');
 Route::post('/delete/{id}', 'SubjectController@delete')->name('delete');
+
+Route::post('/view-department', 'DepartmentController@store')->name('view-department');
+Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');
