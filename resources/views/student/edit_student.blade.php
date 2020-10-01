@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="subject_name">Select Subject</label>
                     <select class="form-control select2" name="subject_name" id="subject_name">
-                        <option value="1" disabled>Select Subject</option>
+                        <option value="" disabled>Select Subject</option>
                         @foreach($subjects as $subject)
                             <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
                         @endforeach

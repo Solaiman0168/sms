@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\cr;
 use App\Subject;
+use App\Student;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -90,7 +91,7 @@ class SubjectController extends Controller
      */
     public function delete($id)
     {
-        $subject = Subject::find($id);
+        $subject = Student::find($id);
         $subject->delete();
 
         return back()->with('subject_delete_success_msg','Subject deleted successfully');
