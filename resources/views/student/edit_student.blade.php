@@ -62,7 +62,12 @@
 
                 <div class="form-group">
                     <label for="student_image">Select Image:</label>
-                    <input type="file" class="form-control" id="student_image" name="student_image">
+                    <div class="custom-file m-b-10">
+                        <input type="file" class="custom-file-input" id="student_image" name="user_image">
+                        <label class="custom-file-label" for="customFile">Choose image</label>
+                    </div>
+                    <img class="rounded" id="student_edit_image" src="{{asset('/'.$student->image)}}" alt="Image" width="150px" height="120px">
+                    <img id="image_view" class="rounded" src="#" alt="Images" width="150px" height="120px" style="display: none;">
                 </div>
 
                 <div class="form-group">
@@ -80,6 +85,31 @@
         </div>
     </div>
 
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('form').parsley();
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#image_view').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#student_image").change(function() {
+            $('#student_edit_image').hide();
+            $('#image_view').show();
+            readURL(this);
+        });
+
+    </script>
 
 
 @endsection
