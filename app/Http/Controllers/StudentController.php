@@ -44,8 +44,9 @@ class StudentController extends Controller
         $validatedData = $request->validate([
             'registration_id' => 'required|integer|',
             'name'            => 'required|string|max:25',
-            'department_name' => 'required|string',
-            'subject_name'    => 'required|string',
+            'department_name' => 'required|string|unique',
+            'subject_name'    => 'required|string|unique',
+            'image'           => 'nullable|image',
             'info' => 'nullable'
         ]);
 
@@ -60,11 +61,21 @@ class StudentController extends Controller
        $student->department_name = $request['department_name'];
        $student->subject_name = $request['subject_name'];
        $student->info = $request['info'];
+
+//        $filename = '';
+//        if($request->hasFile('student_image')){
+//            $file = $request->student_image;
+//            $filename = rand().'.'.$file->clientExtension();
+//            $file->move('images/', $filename);
+//        }
+//        $request['image'] = $filename;
+
         if ($request->student_image) {
             $file = $request->file('student_image');
             $file->move('images/', $file->getClientOriginalName());
             $student->image = 'images/'.$file->getClientOriginalName();
         }
+
        $student->save();
 
         return back()->with('student_add_success_msg','Student added successfully');
@@ -93,7 +104,7 @@ class StudentController extends Controller
         $departments = Department::all();
         $subjects = Subject::all();
         $student = Student::find($id);
-        return view ('student.edit_student', Compact('subjects', 'departments'))->with('student', $student);
+        return view ('student.edit_student', Compact('departments', 'subjects'))->with('student', $student);
     }
 
     /**
@@ -105,17 +116,32 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+//        dd($request->all());
+
+
         $student = Student::find($id);
 
         $student->registration_id = $request['registration_id'];
         $student->name = $request['name'];
+        $student->subject_name = $request['subject_name'];
         $student->department_name = $request['department_name'];
         $student->info = $request['info'];
+
+//        $fileName = $request->exist_image;
+//        if ($request->hasfile('student_image')) {
+//            $file = $request->student_image;
+//            $fileName = time() . '.' . $file->clientExtension();
+//            $file->move('public/images/', $fileName);
+//        }
+//        $request['image'] = $fileName;
+
         if ($request->student_image) {
             $file = $request->file('student_image');
             $file->move('images/', $file->getClientOriginalName());
             $student->image = 'images/'.$file->getClientOriginalName();
         }
+
         $student->save();
 
         return back()->with('student_update_success_msg','Student updated successfully');

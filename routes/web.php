@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master');
+//    return view('master');
+    return redirect('login');
 });
 
 
@@ -41,3 +42,7 @@ Route::post('/delete/{id}', 'SubjectController@delete')->name('delete');
 
 Route::post('/view-department', 'DepartmentController@store')->name('view-department');
 Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

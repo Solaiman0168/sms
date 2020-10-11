@@ -131,7 +131,7 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1gW1j4lxyHVvnuE3cxLDshljhbm" />
@@ -188,7 +188,15 @@
       <workItem from="1601310983689" duration="5911000" />
       <workItem from="1601393768069" duration="18224000" />
       <workItem from="1601483535976" duration="5684000" />
-      <workItem from="1601527678134" duration="1012000" />
+      <workItem from="1601619533223" duration="26924000" />
+      <workItem from="1601748577202" duration="900000" />
+      <workItem from="1601830744165" duration="4175000" />
+      <workItem from="1601838463103" duration="1659000" />
+      <workItem from="1601866762708" duration="727000" />
+      <workItem from="1601868390796" duration="457000" />
+      <workItem from="1602261595360" duration="3307000" />
+      <workItem from="1602347615624" duration="4967000" />
+      <workItem from="1602378378051" duration="584000" />
     </task>
     <servers />
   </component>
@@ -200,10 +208,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601397838114" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601493889970">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1601621058175">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601493889970" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1601621058175" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1601410341039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

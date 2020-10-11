@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+    <meta name="description" content="Student Management System solution for student overview">
     <meta name="author" content="Coderthemes">
 
     <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -18,6 +18,9 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 {{--    <script src="assets/js/modernizr.min.js"></script>--}}
 
@@ -36,7 +39,7 @@
         <!-- LOGO -->
         <div class="topbar-left">
             <div class="text-center">
-                <a href="index.html" class="logo"><i class="icon-magnet icon-c-logo"></i><span>SMS</span></a>
+                <a href="" class="logo"><i class="icon-magnet icon-c-logo"></i><span>SMS</span></a>
                 <!-- Image Logo here -->
                 <!--<a href="index.html" class="logo">-->
                 <!--<i class="icon-c-logo"> <img src="assets/images/logo_sm.png" height="42"/> </i>-->
@@ -559,6 +562,12 @@
 <!-- App js -->
 <script src="{{asset('assets/js/jquery.core.js')}}"></script>
 <script src="{{asset('assets/js/jquery.app.js')}}"></script>
+
+<script>
+    $(".select2").select2({
+        tags: true
+    });
+</script>
 
 {{--<script type="text/javascript">--}}
 {{--    jQuery(document).ready(function($) {--}}

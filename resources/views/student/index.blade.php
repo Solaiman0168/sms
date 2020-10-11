@@ -20,7 +20,6 @@
                 </div>
             @endif
 
-
             <div class="table-responsive">
                 <table class="table table-bordered w-100">
                     <thead>
@@ -43,7 +42,7 @@
                             <td>{{$student->registration_id}}</td>
                             <td>{{$student->subject_name}}</td>
                             <td>{{$student->department_name}}</td>
-                            <td><img src="{{asset($student->image)}}" height="100" width="150"  alt="Responsive image"></td>
+                            <td><img src="{{asset($student->image)}}" height="50" width="60"  alt="Responsive image"></td>
                             <td>{{$student->info}}</td>
                             <td>
                                 <div class="d-flex justify-content-start align-items-center">
