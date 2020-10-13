@@ -46,6 +46,9 @@ Route::post('/delete/{id}', 'SubjectController@delete')->name('delete');
 Route::post('/view-department', 'DepartmentController@store')->name('view-department');
 Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');
 
+Route::post('/view/post', 'PostController@store')->name('view.post');
+//Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
