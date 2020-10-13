@@ -45,8 +45,7 @@
 
 
             <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
-
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="form-group">
                     <label for="name">Name:</label>
