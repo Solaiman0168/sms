@@ -11,9 +11,32 @@
         Add Student Post
     </div>
     <div class="card-body">
+
+        @if ($errors->any())
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
+
+        @if (Session::has('student_post_add_success_msg'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {!! Session::get('student_post_add_success_msg') !!}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
         <form action="{{route('view.post')}}" method="post" enctype="multipart/form-data">
             @csrf
-
             <div class="form-group">
                 <label for="post_title">Enter Post Title:</label>
                 <input type="text" class="form-control" name="post_title" id="post_title" required>
@@ -21,7 +44,7 @@
 
             <div class="form-group">
                 <label for="post_description">Enter Post Description :</label>
-                <input type="number" class="form-control" name="post_description" id="post_description" required>
+                <textarea class="form-control" name="post_description" id="post_description"></textarea>
             </div>
 
             <div class="form-group">
@@ -34,19 +57,19 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <select class="form-control select2" name="subject" id="subject">
-                    <option value="1" disabled>Select Subject</option>
-                    @foreach($subjects as $subject)
-                        <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
-                    @endforeach
-                </select>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="subject">Subject:</label>--}}
+{{--                <select class="form-control select2" name="subject" id="subject">--}}
+{{--                    <option value="1" disabled>Select Subject</option>--}}
+{{--                    @foreach($subjects as $subject)--}}
+{{--                        <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--            </div>--}}
 
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button style="margin-left: 28rem;" type="submit" class="btn btn-success">Submit</button>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             </div>
 

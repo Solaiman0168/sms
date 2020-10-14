@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Department;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,18 +25,31 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create_student_post');
+        $departments = Department::all();
+        return view('post.create_student_post', compact('departments'));
+
+        return back()->with('student_post_add_success_msg','Student post added successfully');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request   $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //Insert data into Student Table
+        dd($request->all());
+
+        //Insert data into Post Table
+
+        $post = new Post;
+
+        $post->post_title = $request ['post_title'];
+        $post->post_description = $request ['post_description'];
+        $post->department_name = $request ['department_name'];
+
+        $post->save();
     }
 
     /**
