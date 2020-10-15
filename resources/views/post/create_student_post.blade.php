@@ -38,18 +38,18 @@
         <form action="{{route('view.post')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="post_title">Enter Post Title:</label>
-                <input type="text" class="form-control" name="post_title" id="post_title" required>
+                <label for="title">Enter Post Title:</label>
+                <input type="text" class="form-control" name="title" id="title" required>
             </div>
 
             <div class="form-group">
-                <label for="post_description">Enter Post Description :</label>
-                <textarea class="form-control" name="post_description" id="post_description"></textarea>
+                <label for="description">Enter Post Description :</label>
+                <textarea class="form-control" name="description" id="description"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="department">Department</label>
-                <select class="form-control select2" name="department" id="department">
+                <label for="department_name">Department</label>
+                <select class="form-control select2" name="department_name" id="department_name">
                     <option value="1" disabled>Select Department</option>
                     @foreach($departments as $department)
                         <option value="{{$department->department_name}}">{{$department->department_name}}</option>

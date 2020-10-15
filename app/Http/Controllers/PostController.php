@@ -6,6 +6,8 @@ use App\Post;
 use App\Department;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class PostController extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $departments = Department::all();
+       return view('post.student_post_list', compact('departments'));
     }
 
     /**
@@ -37,19 +40,29 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request   $request
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function store(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
 
         //Insert data into Post Table
 
         $post = new Post;
 
-        $post->post_title = $request ['post_title'];
-        $post->post_description = $request ['post_description'];
+        $post->title = $request ['title'];
+        $post->description = $request ['description'];
         $post->department_name = $request ['department_name'];
+        $post->user_id = Auth::id();
 
         $post->save();
+
+        return redirect('/view/post');
     }
 
     /**
