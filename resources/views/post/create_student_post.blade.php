@@ -35,7 +35,8 @@
             </div>
         @endif
 
-        <form action="{{route('view.post')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('view.post')}}" method="post">
+            @method('POST')
             @csrf
             <div class="form-group">
                 <label for="title">Enter Post Title:</label>
