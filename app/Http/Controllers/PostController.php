@@ -17,8 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::All();
         $departments = Department::all();
-       return view('post.student_post_list', compact('departments'));
+       return view('post.student_post_list', compact('departments', 'posts'));
     }
 
     /**

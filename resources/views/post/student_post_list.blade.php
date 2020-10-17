@@ -7,17 +7,18 @@
 @section('content')
 
     <div class="card">
-        <div class="card-body">
-            <h2>All Posts</h2>
+        <div class="card-header">
+            <h3>All Posts</h3>
 
             @foreach($posts as $post)
-                <div class="card card-body">
-                    <h3>{{$post->itle}}</h3>
+                <div class="card-body">
+                    <h3>{{ $post->title }}</h3>
                     <div>
-                        {{$post->description}}
+                        {!! $post->description  !!}
                     </div>
                 </div>
             @endforeach
+
         </div>
     </div>
 
