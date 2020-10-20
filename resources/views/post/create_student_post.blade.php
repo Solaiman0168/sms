@@ -12,31 +12,8 @@
     </div>
     <div class="card-body">
 
-        @if ($errors->any())
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
+        <form action="{{route('view.post')}}" method="POST">
 
-
-        @if (Session::has('student_post_add_success_msg'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {!! Session::get('student_post_add_success_msg') !!}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
-        <form action="{{route('view.post')}}" method="post">
-            @method('POST')
             @csrf
             <div class="form-group">
                 <label for="title">Enter Post Title:</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Department;
+use App\User;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -17,9 +18,13 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::All();
+        $posts = Post::orderBy('id', 'desc')->get();
         $departments = Department::all();
-       return view('post.student_post_list', compact('departments', 'posts'));
+        $users = User::all();
+       return view('post.student_post_list', compact('departments', 'posts', 'users'));
+
+//        return back()->with('student_post_add_success_msg','Student post added successfully');
+
     }
 
     /**
@@ -32,7 +37,6 @@ class PostController extends Controller
         $departments = Department::all();
         return view('post.create_student_post', compact('departments'));
 
-        return back()->with('student_post_add_success_msg','Student post added successfully');
     }
 
     /**
@@ -50,7 +54,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-//        dd($request->all());
+        //dd($request->all());
 
         //Insert data into Post Table
 
@@ -63,7 +67,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect('/view/post');
+        return redirect('/post/index')->with('student_post_add_success_msg','Student post added successfully');
     }
 
     /**
