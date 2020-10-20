@@ -76,9 +76,12 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+
+    public function show($id)
     {
-        //
+        $posts = Post::All();
+        $departments = Department::All();
+       return view('post.department_post', compact('departments', 'posts'));
     }
 
     /**

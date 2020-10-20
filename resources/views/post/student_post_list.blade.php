@@ -37,7 +37,11 @@
 
         @foreach($posts as $post)
             <div class="card-body">
-                <h3>{{ $post->title }} in <mark><small>( {{ $post->department_name }} )</small></mark>  {{ $post->user_id }}</h3>
+                <h3>{{ $post->title }} in
+                    <mark>
+                        <a href="{{route('post.show', $post->department->department_name)}}"><small>( {{ $post->department_name }} )</small></a>
+                    </mark>
+                </h3>
                 <div>
                     {!! $post->description  !!}
                 </div>

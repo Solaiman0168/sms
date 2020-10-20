@@ -33,6 +33,7 @@ Route::get('/create-department', 'DepartmentController@create')->name('create-de
 
 Route::get('/post/index', 'PostController@index')->name('post.index');
 Route::get('/create/post', 'PostController@create')->name('create.post');
+Route::get('/show/department/post/{id}', 'PostController@show')->name('post.show');
 
 
 Route::post('/store', 'StudentController@store')->name('store');
