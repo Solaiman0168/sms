@@ -13,3 +13,4 @@ class Department extends Model
         return $this->hasMany(Post::Class);
     }
 }
+

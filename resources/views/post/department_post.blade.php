@@ -8,9 +8,9 @@
 
     <div class="card">
         <div class="card-header">
-            <h3>Department = {{ $department->department_nmae }}</h3>
+            <h3>Department = {{ $departments->department_name ?? '' }} </h3>
         </div>
-        @foreach($department->posts as $post)
+        @foreach($departments->posts as $post)
             <div class="card-body">
                 <h3>{{ $post->title }} in
                     <mark>

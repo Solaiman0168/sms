@@ -79,9 +79,8 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $posts = Post::All();
-        $departments = Department::All();
-       return view('post.department_post', compact('departments', 'posts'));
+        $departments = Department::find($id);
+       return view('post.department_post', compact('departments'));
     }
 
     /**

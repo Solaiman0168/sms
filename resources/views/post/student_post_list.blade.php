@@ -39,7 +39,7 @@
             <div class="card-body">
                 <h3>{{ $post->title }} in
                     <mark>
-                        <a href="{{route('post.show', $post->department->department_name)}}"><small>( {{ $post->department_name }} )</small></a>
+                        <a href="{{route('post.show', $post->department_name)}}"><small>( {{ $post->department_name }} )</small></a>
                     </mark>
                 </h3>
                 <div>
