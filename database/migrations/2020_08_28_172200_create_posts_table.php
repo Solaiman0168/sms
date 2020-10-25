@@ -19,7 +19,8 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('department_name');
-            $table->unsignedInteger('user_id');
+            $table->string('subject_name');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

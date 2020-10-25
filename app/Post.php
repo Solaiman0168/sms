@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Hamcrest\Internal\SelfDescribingValue;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -15,10 +16,16 @@ class Post extends Model
     public function department()
 
     {
-        // Relation department to foreign key
         return $this->belongsTo(Department::Class);
 
     }
+
+
+    public function subject()
+    {
+        return $this->belongsToMany(Subject::Class);
+    }
+
 
     public function user()
 

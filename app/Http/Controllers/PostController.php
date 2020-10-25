@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Department;
+use App\Subject;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,11 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->get();
-        $departments = Department::all();
-        $users = User::all();
-       return view('post.student_post_list', compact('departments', 'posts', 'users'));
+        $departments = Department::All();
+        $subjects = Subject::All();
+        $users = User::All();
+//          dd($subjects);
+       return view('post.student_post_list', compact('departments', 'posts', 'subjects', 'users'));
 
 //        return back()->with('student_post_add_success_msg','Student post added successfully');
 
@@ -35,8 +38,8 @@ class PostController extends Controller
     public function create()
     {
         $departments = Department::all();
-        return view('post.create_student_post', compact('departments'));
-
+        $subjects = Subject::all();
+        return view('post.create_student_post', compact('departments' , 'subjects'));
     }
 
     /**
@@ -54,7 +57,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request->all());
+//        dd($request->all());
 
         //Insert data into Post Table
 
@@ -63,7 +66,8 @@ class PostController extends Controller
         $post->title = $request ['title'];
         $post->description = $request ['description'];
         $post->department_name = $request ['department_name'];
-        $post->user_id = Auth::id();
+        $post->subject_name = $request ['subject_name'];
+        $post->user_id = Auth::user()->name;
 
         $post->save();
 
@@ -79,8 +83,10 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $departments = Department::find($id);
-       return view('post.department_post', compact('departments'));
+        $departments = Department::where('department_name' ,$id)->first();
+        $subjects = Subject::All();
+     //  dd($departments);
+       return view('post.department_post', compact('departments' , 'subjects'));
     }
 
     /**

@@ -8,20 +8,26 @@
 
     <div class="card">
         <div class="card-header">
-            <h3>Department = {{ $departments->department_name ?? '' }} </h3>
+            <h3>Department = {{ $departments->department_name }} </h3>
         </div>
-        @foreach($departments->posts as $post)
-            <div class="card-body">
-                <h3>{{ $post->title }} in
-                    <mark>
-                        <a href="{{route('post.show', $post->id)}}"><small>( {{ $post->department_name }} )</small></a>
-                    </mark>
-                </h3>
-                <div>
-                    {!! $post->description  !!}
+        @php
+            $dep_post = \App\Post::where('department_name',$departments->department_name)->get();
+        @endphp
+        @if(isset($dep_post))
+            @foreach($dep_post as $post)
+                <div class="card-body">
+
+                    <h2>{{ $post->user_id}}</h2>
+
+                    <h3>{{ $post->title }} </h3>
+
+                    <div>
+                        {!! $post->description  !!}
+                    </div>
+
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        @endif
     </div>
 
 @endsection

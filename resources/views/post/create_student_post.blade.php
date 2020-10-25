@@ -15,6 +15,7 @@
         <form action="{{route('view.post')}}" method="POST">
 
             @csrf
+
             <div class="form-group">
                 <label for="title">Enter Post Title:</label>
                 <input type="text" class="form-control" name="title" id="title" required>
@@ -35,15 +36,15 @@
                 </select>
             </div>
 
-{{--            <div class="form-group">--}}
-{{--                <label for="subject">Subject:</label>--}}
-{{--                <select class="form-control select2" name="subject" id="subject">--}}
-{{--                    <option value="1" disabled>Select Subject</option>--}}
-{{--                    @foreach($subjects as $subject)--}}
-{{--                        <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--            </div>--}}
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <select class="form-control select2" name="subject" id="subject">
+                    <option value="1" disabled>Select Subject</option>
+                    @foreach($subjects as $subject)
+                        <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="form-group">
                 <div class="d-flex justify-content-center">
