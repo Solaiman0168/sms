@@ -11,7 +11,7 @@ class Post extends Model
     protected $table = 'posts';
 
     // Setup fields of table "posts"
-    protected $fillable = ['id', 'title', 'description', 'department_name','user_id'];
+    protected $fillable = ['id', 'title', 'description', 'department_name', 'subject_name' , 'user_id'];
 
     public function department()
 
@@ -23,7 +23,7 @@ class Post extends Model
 
     public function subject()
     {
-        return $this->belongsToMany(Subject::Class);
+        return $this->belongsTo(Subject::Class);
     }
 
 

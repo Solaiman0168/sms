@@ -8,10 +8,9 @@ class Subject extends Model
 {
     protected $fillable = ['subject_name'];
 
-
     public function posts()
     {
-        return $this->belongsToMany(Post::Class);
+        return $this->hasMany(Post::Class);
     }
 
 

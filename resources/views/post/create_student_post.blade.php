@@ -57,3 +57,12 @@
 </div>
 
 @endsection
+
+
+{{--@section('scripts')--}}
+
+{{--    <script>--}}
+{{--        $('.select2').select2();--}}
+{{--    </script>--}}
+
+{{--@endsection--}}

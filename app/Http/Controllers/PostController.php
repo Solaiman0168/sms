@@ -24,7 +24,7 @@ class PostController extends Controller
         $subjects = Subject::All();
         $users = User::All();
 //          dd($subjects);
-       return view('post.student_post_list', compact('departments', 'posts', 'subjects', 'users'));
+       return view('post.student_post_list', compact('subjects' , 'departments', 'users'))->with('posts', $posts);
 
 //        return back()->with('student_post_add_success_msg','Student post added successfully');
 
@@ -39,7 +39,7 @@ class PostController extends Controller
     {
         $departments = Department::all();
         $subjects = Subject::all();
-        return view('post.create_student_post', compact('departments' , 'subjects'));
+        return view('post.create_student_post', compact('subjects' , 'departments'));
     }
 
     /**
@@ -57,6 +57,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
 //        dd($request->all());
 
         //Insert data into Post Table
@@ -84,9 +85,9 @@ class PostController extends Controller
     public function show($id)
     {
         $departments = Department::where('department_name' ,$id)->first();
-        $subjects = Subject::All();
+//        $subjects = Subject::All();
      //  dd($departments);
-       return view('post.department_post', compact('departments' , 'subjects'));
+       return view('post.department_post', compact('departments'));
     }
 
     /**
