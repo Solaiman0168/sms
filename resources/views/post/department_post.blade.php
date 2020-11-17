@@ -19,9 +19,11 @@
         @foreach($dep_post as $post)
             <div class="card-body">
 
-                <h2>{{ $post->user_id}}</h2>
+                <h2>Subject = {{$post->subject_name}}</h2>
 
-                <h3>{{ $post->title }} </h3>
+                <h3>Name = {{ $post->user_name}}</h3>
+
+                <h4>{{ $post->title }} </h4>
 
                 <div>
                     {!! $post->description  !!}

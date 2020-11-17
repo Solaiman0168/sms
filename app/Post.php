@@ -17,15 +17,12 @@ class Post extends Model
 
     {
         return $this->belongsTo(Department::Class);
-
     }
-
 
     public function subject()
     {
         return $this->belongsTo(Subject::Class);
     }
-
 
     public function user()
 

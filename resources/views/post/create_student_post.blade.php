@@ -38,7 +38,7 @@
 
             <div class="form-group">
                 <label for="subject">Subject:</label>
-                <select class="form-control select2" name="subject" id="subject">
+                <select class="form-control select2" name="subject_name" id="subject">
                     <option value="1" disabled>Select Subject</option>
                     @foreach($subjects as $subject)
                         <option value="{{$subject->subject_name}}">{{$subject->subject_name}}</option>

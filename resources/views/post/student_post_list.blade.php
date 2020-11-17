@@ -38,7 +38,7 @@
         @foreach($posts as $post)
             <div class="card-body border-primary">
 
-                <h2>{{ $post->user_id}}</h2>
+                <h2>{{ $post->user_name}}</h2>
 
                 <h3> Department Name =
                     <mark>

@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('description');
             $table->string('department_name');
             $table->string('subject_name');
-            $table->integer('user_id');
+            $table->string('user_name');
             $table->timestamps();
         });
     }

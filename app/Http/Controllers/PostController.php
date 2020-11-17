@@ -68,7 +68,7 @@ class PostController extends Controller
         $post->description = $request ['description'];
         $post->department_name = $request ['department_name'];
         $post->subject_name = $request ['subject_name'];
-        $post->user_id = Auth::user()->name;
+        $post->user_name = Auth::user()->name;
 
         $post->save();
 
