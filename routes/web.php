@@ -39,13 +39,13 @@ Route::get('/show/department/post/{id}', 'PostController@show')->name('post.show
 Route::post('/store', 'StudentController@store')->name('store');
 //Route::post('/store', 'StudentController@store');
 Route::post('/update/{id}', 'StudentController@update')->name('update');
-Route::post('/delete/{id}', 'StudentController@delete')->name('delete');
+Route::post('/student/delete/{id}', 'StudentController@delete')->name('student-delete');
 
 Route::post('/view-subject', 'SubjectController@store')->name('view-subject');
-Route::post('/delete/{id}', 'SubjectController@delete')->name('delete');
+Route::post('/subject/delete/{id}', 'SubjectController@delete')->name('subject-delete');
 
 Route::post('/view-department', 'DepartmentController@store')->name('view-department');
-Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');
+Route::post('/department/delete/{id}', 'DepartmentController@delete')->name('department-delete');
 
 Route::post('/view/post', 'PostController@store')->name('view.post');
 //Route::post('/delete/{id}', 'DepartmentController@delete')->name('delete');

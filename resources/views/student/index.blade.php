@@ -42,15 +42,15 @@
                             <td>{{$student->registration_id}}</td>
                             <td>{{$student->subject_name}}</td>
                             <td>{{$student->department_name}}</td>
-                            <td><img src="{{asset($student->image)}}" height="50" width="60"  alt="Responsive image"></td>
+                            <td><img src="{{asset($student->image)}}" height="50" width="60"  alt="Image not found"></td>
                             <td>{{$student->info}}</td>
                             <td>
                                 <div class="d-flex justify-content-start align-items-center">
                                     <a href="{{route('edit', $student->id)}}" class="btn btn-primary mr-2">Edit</a>
                                     <a href="{{route('show', $student->id)}}" class="btn btn-success mr-2">View</a>
-                                    <form action="{{route('delete', $student->id)}}" method="post">
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger" value="delete">Delete</button>
+                                    <form action="{{route('student-delete', $student->id)}}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </div>
                             </td>

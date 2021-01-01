@@ -55,8 +55,8 @@
                     <td>{{ $number }}</td>
                     <td>{{$subject->subject_name}}</td>
                     <td>
-                        <form action="{{route('delete', $subject->id)}}" method="post">
-                            {{ csrf_field() }}
+                        <form action="{{route('subject-delete', $subject->id)}}" method="post">
+                            @csrf
                             <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                         </form>
                     </td>

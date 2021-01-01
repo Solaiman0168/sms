@@ -9,7 +9,7 @@
     <div class="card">
         <div class="card-header">
 
-            <h3>All Posts</h3>
+            <h3>All Students Post</h3>
 
         </div>
 
@@ -36,22 +36,19 @@
         @endif
 
         @foreach($posts as $post)
-            <div class="card-body border-primary">
+            <div class="card-body border">
 
-                <h2>{{ $post->user_name}}</h2>
-
+                <h2>{{ $post->user_name}}'s post</h2>
+                <h6>{{$post->created_at->diffForHumans()}}</h6>
                 <h3> Department Name =
                     <mark>
                         <a href="{{route('post.show', $post->department_name)}}"><small>( {{ $post->department_name }} )</small></a>
                     </mark>
                 </h3>
-
                 <h3>Subject Name = {{ $post->subject_name }}</h3>
-
-                <h3>{{ $post->title }}</h3>
-
+                <h3>Problem Title: {{ $post->title }}</h3>
                 <div>
-                    {!! $post->description  !!}
+                    <p class="font-16">Description: <span class="text-custom">{!! $post->description  !!}</span></p>
                 </div>
 
             </div>

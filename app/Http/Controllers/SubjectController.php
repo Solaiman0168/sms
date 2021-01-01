@@ -91,9 +91,14 @@ class SubjectController extends Controller
      */
     public function delete($id)
     {
-        $subject = Student::find($id);
-        $subject->delete();
+        $subject = Subject::where('id', $id)->first();
 
-        return back()->with('subject_delete_success_msg','Subject deleted successfully');
+        if ($subject != null) {
+            $subject->delete();
+
+            return redirect()->route('subject-index')->with('subject_delete_success_msg','Subject deleted successfully');
+        }
+
+        return redirect()->route('subject-index')->with('subject_delete_success_msg','Something Went Wrong');
     }
 }

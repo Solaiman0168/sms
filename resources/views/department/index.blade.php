@@ -54,7 +54,7 @@
                         <td>{{ $number }}</td>
                         <td>{{$department->department_name}}</td>
                         <td>
-                            <form action="{{route('delete', $department->id)}}" method="post">
+                            <form action="{{route('department-delete', $department->id)}}" method="post">
                                 @csrf
                                 <button type="submit" class="btn btn-danger" value="delete">Delete</button>
                             </form>

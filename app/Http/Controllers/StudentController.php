@@ -41,14 +41,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //Check validation
-        $validatedData = $request->validate([
-            'registration_id' => 'required|integer|',
-            'name'            => 'required|string|max:25',
-            'department_name' => 'required|string|unique',
-            'subject_name'    => 'required|string|unique',
-            'image'           => 'nullable|image',
-            'info' => 'nullable'
-        ]);
+//        $validatedData = $request->validate([
+//            'registration_id' => 'required|integer|',
+//            'name'            => 'required|string|max:25',
+//            'department_name' => 'required|string|unique',
+//            'subject_name'    => 'required|string|unique',
+//            'image'           => 'nullable|image',
+//            'info' => 'nullable'
+//        ]);
 
 
 //        dd($request->all());

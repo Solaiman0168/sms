@@ -13,20 +13,15 @@ class Post extends Model
     // Setup fields of table "posts"
     protected $fillable = ['id', 'title', 'description', 'department_name', 'subject_name' , 'user_id'];
 
-    public function department()
-
-    {
+    public function department(){
         return $this->belongsTo(Department::Class);
     }
 
-    public function subject()
-    {
+    public function subject(){
         return $this->belongsTo(Subject::Class);
     }
 
-    public function user()
-
-    {
+    public function user(){
         return $this->belongsTo(User::Class);
     }
 

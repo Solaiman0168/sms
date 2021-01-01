@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Department;
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class DepartmentController extends Controller
 {
@@ -13,6 +14,7 @@ class DepartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $departments = Department::orderBy('department_name', 'asc')->get();
@@ -89,9 +91,14 @@ class DepartmentController extends Controller
      */
     public function delete($id)
     {
-        $department = Student::find($id);
-        $department->delete();
+        $department = Department::where('id', $id)->first();
 
-        return back()->with('department_delete_success_msg','Department deleted successfully');
+        if($department != null){
+            $department->delete();
+
+            return Redirect()->route('department-index')->with('department_delete_success_msg', 'Department deleted successfully');
+        }
+
+        return Redirect()->route('department-index')->with('department_delete_success_msg','Something Went Wrong');
     }
 }
