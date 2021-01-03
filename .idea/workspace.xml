@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f63ac518-d90b-4662-bed3-b868cf34380d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sms.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Subject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Subject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/department/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/department_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/department_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post/student_post_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/student_post_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/subject/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/subject/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/department/create_department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/create_department.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/create_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/create_student.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/edit_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/edit_student.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +146,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -230,7 +221,11 @@
       <workItem from="1605580479294" duration="1157000" />
       <workItem from="1606039838541" duration="3287000" />
       <workItem from="1609128204678" duration="2167000" />
-      <workItem from="1609493244684" duration="19298000" />
+      <workItem from="1609493244684" duration="19621000" />
+      <workItem from="1609549942033" duration="9277000" />
+      <workItem from="1609596893857" duration="871000" />
+      <workItem from="1609603395858" duration="1868000" />
+      <workItem from="1609640684464" duration="2342000" />
     </task>
     <servers />
   </component>
@@ -242,11 +237,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601397838114" />
-    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1609506810606">
+    <state x="651" y="170" key="FileChooserDialogImpl" timestamp="1609557032466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1602468244389" />
-    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609506810606" />
+    <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609557032466" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1609549943183">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609549943183" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1601410341039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

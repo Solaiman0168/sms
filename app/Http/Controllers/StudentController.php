@@ -41,14 +41,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //Check validation
-//        $validatedData = $request->validate([
-//            'registration_id' => 'required|integer|',
-//            'name'            => 'required|string|max:25',
+        $validatedData = $request->validate([
+            'registration_id' => 'required|integer|',
+            'name'            => 'required|string|max:25',
 //            'department_name' => 'required|string|unique',
 //            'subject_name'    => 'required|string|unique',
-//            'image'           => 'nullable|image',
-//            'info' => 'nullable'
-//        ]);
+            'image'           => 'nullable|image',
+            'info' => 'nullable'
+        ]);
 
 
 //        dd($request->all());
@@ -70,10 +70,11 @@ class StudentController extends Controller
 //        }
 //        $request['image'] = $filename;
 
+
         if ($request->student_image) {
-            $file = $request->file('student_image');
+            $file = $request->file('student_image');  // student_image from input text name="student_image".
             $file->move('images/', $file->getClientOriginalName());
-            $student->image = 'images/'.$file->getClientOriginalName();
+            $student->image = 'images/'.$file->getClientOriginalName();   //image from database column name.
         }
 
        $student->save();
@@ -119,7 +120,6 @@ class StudentController extends Controller
 
 //        dd($request->all());
 
-
         $student = Student::find($id);
 
         $student->registration_id = $request['registration_id'];
@@ -128,23 +128,15 @@ class StudentController extends Controller
         $student->department_name = $request['department_name'];
         $student->info = $request['info'];
 
-//        $fileName = $request->exist_image;
-//        if ($request->hasfile('student_image')) {
-//            $file = $request->student_image;
-//            $fileName = time() . '.' . $file->clientExtension();
-//            $file->move('public/images/', $fileName);
-//        }
-//        $request['image'] = $fileName;
-
         if ($request->student_image) {
-            $file = $request->file('student_image');
+            $file = $request->file('student_image'); // student_image from input text name="student_image".
             $file->move('images/', $file->getClientOriginalName());
-            $student->image = 'images/'.$file->getClientOriginalName();
+            $student->image = 'images/'.$file->getClientOriginalName();  //image from database column name.
         }
 
-        $student->save();
+         $student->save();
 
-        return back()->with('student_update_success_msg','Student updated successfully');
+        return Redirect('index')->with('student_update_success_msg','Student updated successfully');
     }
 
     /**

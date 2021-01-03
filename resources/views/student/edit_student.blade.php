@@ -26,10 +26,8 @@
             @endif
 
 
-            <form action="{{route('update', $student->id)}}" method="post" enctype="multipart/form-data">
-
-                {{ csrf_field() }}
-
+            <form action="{{route('update', $student->id)}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" name="name" id="name" value="{{$student->name}}" required>
@@ -62,7 +60,7 @@
                 <div class="form-group">
                     <label for="student_image">Select Image:</label>
                     <div class="custom-file m-b-10">
-                        <input type="file" class="custom-file-input" id="student_image" name="user_image">
+                        <input type="file" class="custom-file-input" id="student_image" name="student_image">
                         <label class="custom-file-label" for="customFile">Choose image</label>
                     </div>
                     <img class="rounded" id="student_edit_image" src="{{asset('/'.$student->image)}}" alt="Image" width="150px" height="120px">
@@ -103,7 +101,7 @@
         }
 
         $("#student_image").change(function() {
-            $('#student_edit_image').hide();
+            // $('#student_edit_image').hide();
             $('#image_view').show();
             readURL(this);
         });

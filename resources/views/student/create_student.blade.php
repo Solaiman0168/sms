@@ -110,9 +110,11 @@
 
 
 
-    <script type="text/javascript">
+    <script>
 
-
+        // $(document).ready(function() {
+        //     $('form').parsley();
+        // });
 
         function readURL(input) {
             if (input.files && input.files[0]) {

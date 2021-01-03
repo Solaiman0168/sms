@@ -36,7 +36,7 @@
 
             <form action="{{url('view-department')}}" method="post">
 
-                {{ csrf_field() }}
+                @csrf
 
                 <div class="form-group">
                     <label for="department_name">Department Name:</label>
