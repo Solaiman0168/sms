@@ -24,13 +24,13 @@
                 <table class="table table-bordered w-100">
                     <thead>
                          <tr>
-                             <th>Name</th>
                              <th>Registration Id</th>
-                             <th>Subject Name</th>
+                             <th>Name</th>
                              <th>Department Name</th>
+                             <th>Subject Name</th>
                              <th>Image</th>
                              <th>Info</th>
-                             <th>Action</th>
+                             <th style="width: 8%">Action</th>
                          </tr>
                     </thead>
 
@@ -38,13 +38,13 @@
                     @isset($students)
                         @foreach($students as $student)
                         <tr>
-                            <td>{{$student->name}}</td>
                             <td>{{$student->registration_id}}</td>
-                            <td>{{$student->subject_name}}</td>
+                            <td>{{$student->name}}</td>
                             <td>{{$student->department_name}}</td>
+                            <td>{{$student->subject_name}}</td>
                             <td><img src="{{asset($student->image)}}" height="50" width="60"  alt="Image not found"></td>
                             <td>{{$student->info}}</td>
-                            <td>
+                            <td style="width: 8%">
                                 <div class="d-flex justify-content-start align-items-center">
                                     <a href="{{route('edit', $student->id)}}" class="btn btn-primary mr-2">Edit</a>
                                     <a href="{{route('show', $student->id)}}" class="btn btn-success mr-2">View</a>

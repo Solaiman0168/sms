@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f63ac518-d90b-4662-bed3-b868cf34380d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/department/create_department.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/department/create_department.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/create_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/create_student.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student/edit_student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/edit_student.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/department_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/department_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/post/student_post_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post/student_post_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +224,7 @@
       <workItem from="1609549942033" duration="9277000" />
       <workItem from="1609596893857" duration="871000" />
       <workItem from="1609603395858" duration="1868000" />
-      <workItem from="1609640684464" duration="2342000" />
+      <workItem from="1609640684464" duration="5617000" />
     </task>
     <servers />
   </component>
